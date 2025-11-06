@@ -1,0 +1,38 @@
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  background-color: #008d95;
+  color: white;
+}
+
+.card {
+  margin: auto;
+  top: 12rem;
+  padding: 2rem;  
+  border-radius: 1rem;
+}
+
+.card-tittle, #rowTittle {
+  text-align: center;
+}
+
+a, img {
+  display: block;
+}
+
+#contraseñaPerdida {
+  text-align: right;
+  font-style: italic;
+}
+
+#btnLogin {
+  border: none;
+  margin: #c0f8d1;
+  color: black;
+  background-color: #c0f8d1;
+}
+
