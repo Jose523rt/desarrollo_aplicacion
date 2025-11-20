@@ -15,3 +15,7 @@ Se agregaron nuevas funcionalidades al proyecto:
   * Se agrego el archivo register.html
   * Se agrego el archivo register.ts
 * Se agregaron Entry Points para la navegación entre ventanas 
+### 20 de Noviembre de 2025
+* Se agregaron funcionalidades a la página de Login y Registro
+* Se añadio la conexión a la base de datos
+* Se agrego encriptación de contraseñas
