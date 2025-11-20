@@ -42,3 +42,9 @@ a {
   color: white;
   text-decoration: none;
 }
+
+#btnBackLogin {
+  position: fixed; /* Cambiar a fixed para posicionarlo en relación a la ventana */
+  bottom: 20px;    /* Ajusta la distancia desde la parte inferior */
+  right: 20px;     /* Ajusta la distancia desde la derecha */
+}

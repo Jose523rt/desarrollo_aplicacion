@@ -10,11 +10,13 @@
 
       <div class="card-body">
         <h1 class="card-tittle">Inicio de sesión</h1>
+        <div class="test-center">
+          <img src="../../../recursos/Kduco_logo.png" alt="Logo de Kduco" class="logoKduco">
+        </div>
         <div class="row" id="rowTittle">
           <h6>¿No tienes una cuenta?</h6>
-          <h6>Registrate aquí</h6>
+          <a id="registroLink" role="button" href="#">Registrate aquí</a>
         </div>
-
         <div class="row">
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
@@ -23,7 +25,7 @@
           <div class="mb-4">
             <label for="password" class="form-label">Password</label>
             <input id="inputPassword" type="password" class="form-control" placeholder="Enter your password" required>
-            <p id="contraseñaPerdida">¿Olvidaste tu contraseña?</p>
+            <!--<p id="contraseñaPerdida">¿Olvidaste tu contraseña?</p> -->
           </div>
           <div>
             <button id="btnLogin" type="button" class="btn btn-primary m-0">Login</button>

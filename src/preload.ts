@@ -6,6 +6,7 @@ import { contextBridge, ipcRenderer } from "electron";
 contextBridge.exposeInMainWorld('appNav', {
     toHome: () => ipcRenderer.invoke('nav:toHome'),
     toLogin: () => ipcRenderer.invoke('nav:toLogin'),
+    toRegister: () => ipcRenderer.invoke('nav:toRegister')
 });
 
 contextBridge.exposeInMainWorld('http', {

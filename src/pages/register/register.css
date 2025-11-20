@@ -22,10 +22,10 @@ body {
   border-radius: 1rem;
   position: fixed;
   top: 50%;
-  left: 75%;
+  right: 39%;
   transform: translate(-50%, -50%);
   width: clamp(20rem, 70vw, 38rem);
-  height: 40vw;
+  height: 50vw;
   aspect-ratio: 4 / 3;
   max-height: calc(100vh - 4rem);
   min-height: 300px;
@@ -37,12 +37,6 @@ body {
 
 a, img {
   display: block;
-}
-
-a {
-  color: black;
-  font-style: italic;
-  text-decoration: none;
 }
 
 #contraseñaPerdida {

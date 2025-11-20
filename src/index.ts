@@ -8,8 +8,8 @@ declare const LOGIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 declare const HOME_WINDOW_WEBPACK_ENTRY: string;
 declare const HOME_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
-declare const REGISTER_WINDOW_WEBPACK_ENTREY: string;
-declare const REGISTER_WINDOW_PRELOAD_WEBPACK_ENTREY: string;
+declare const REGISTER_WINDOW_WEBPACK_ENTRY: string;
+declare const REGISTER_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
@@ -49,9 +49,18 @@ ipcMain.handle('nav:toHome', async () => {
 
 ipcMain.handle('nav:toLogin', async () => {
   if (!loginWindow) return;
-  // opcional: cambia preload si home lo requiere
+  // opcional: cambia preload si login lo requiere
   // mainWindow.webContents.session.flushStorageData(); // si necesitas limpiar algo
   await loginWindow.loadURL(LOGIN_WINDOW_WEBPACK_ENTRY);
+  return true;
+});
+
+// Navegación hacía el registro
+ipcMain.handle('nav:toRegister', async () => {
+  if (!loginWindow) return;
+  // opcional: cambia preload si login lo requiere
+  // mainWindow.webContents.session.flushStorageData(); // si necesitas limpiar algo
+  await loginWindow.loadURL(REGISTER_WINDOW_WEBPACK_ENTRY);
   return true;
 });
 

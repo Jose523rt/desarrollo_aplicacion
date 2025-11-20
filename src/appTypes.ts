@@ -1,6 +1,7 @@
 export interface AppNavigation {
     toHome: () => Promise<{ success: boolean; error?: string}>;
     toLogin: () => Promise<{ success: boolean; error?: string}>;
+    toRegister: () => Promise<{ success: boolean; error?: string}>;
 }
 
 export interface Http {

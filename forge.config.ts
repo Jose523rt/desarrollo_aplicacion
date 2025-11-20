@@ -45,6 +45,14 @@ const config: ForgeConfig = {
               js: './src/preload.ts',
             },
           },
+          {
+            html: './src/pages/register/register.html',
+            js: './src/pages/register/register.ts',
+            name: 'register_window',
+            preload: {
+              js: './src/preload.ts',
+            },
+          }
         ],
       },
     }),
