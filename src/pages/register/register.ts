@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Register page loaded'); 
 
   //const btn = document.getElementById('btnTest');
-  const btn = document.getElementById('btnTest');
+  const backBtn = document.getElementById('btnBack');
   const userRegister = (document.getElementById('registerUser') as HTMLInputElement);
   const passwordRegister = (document.getElementById('registerPassword') as HTMLInputElement);
   const passwordConfirm = (document.getElementById('confirmPassword') as HTMLInputElement);
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      // Alinea los nombres de campo con lo que tu API espera (ej: name/email/password)
       const res = await window.http.post('http://localhost:3001/create-user', {
         name,
         email,
@@ -48,14 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
         state: state
       });
 
-      // tu window.http parece devolver { ok, status, body }
       if (!res.ok) {
         const err = res.body?.error || `Error ${res.status}`;
         showAlert(err, 'danger');
         console.error('Error en la petición', res);
       } else {
         showAlert('Registro exitoso', 'success');
-        // redirigir al login o a home según tu flujo
         await window.appNav.toLogin();
       }
     } catch (e) {
@@ -64,10 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  btn?.addEventListener('click', async () => {
+  backBtn?.addEventListener('click', async () => {
   console.log('Botón clickeado');
   await window.appNav.toLogin();
   })
+
 });
 
 

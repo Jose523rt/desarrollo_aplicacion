@@ -52,6 +52,22 @@ const config: ForgeConfig = {
             preload: {
               js: './src/preload.ts',
             },
+          },
+          {
+            html: './src/pages/user/user.html',
+            js: './src/pages/user/user.ts',
+            name: 'user_window',
+            preload: {
+              js: './src/preload.ts',
+            },
+          },
+          {
+            html: './src/pages/editUser/editUser.html',
+            js: './src/pages/editUser/editUser.ts',
+            name: 'editUser_window',
+            preload: {
+              js: './src/preload.ts',
+            },
           }
         ],
       },

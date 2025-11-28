@@ -10,6 +10,12 @@ declare const HOME_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
 declare const REGISTER_WINDOW_WEBPACK_ENTRY: string;
 declare const REGISTER_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
+
+declare const USER_WINDOW_WEBPACK_ENTRY: string;
+declare const USER_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
+
+declare const EDITUSER_WINDOW_WEBPACK_ENTRY: string;
+declare const EDITUSER_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
@@ -41,16 +47,13 @@ app.on('ready', createWindow);
 
 ipcMain.handle('nav:toHome', async () => {
   if (!loginWindow) return;
-  // opcional: cambia preload si home lo requiere
-  // mainWindow.webContents.session.flushStorageData(); // si necesitas limpiar algo
+
   await loginWindow.loadURL(HOME_WINDOW_WEBPACK_ENTRY);
   return true;
 });
 
 ipcMain.handle('nav:toLogin', async () => {
   if (!loginWindow) return;
-  // opcional: cambia preload si login lo requiere
-  // mainWindow.webContents.session.flushStorageData(); // si necesitas limpiar algo
   await loginWindow.loadURL(LOGIN_WINDOW_WEBPACK_ENTRY);
   return true;
 });
@@ -58,16 +61,32 @@ ipcMain.handle('nav:toLogin', async () => {
 // Navegación hacía el registro
 ipcMain.handle('nav:toRegister', async () => {
   if (!loginWindow) return;
-  // opcional: cambia preload si login lo requiere
-  // mainWindow.webContents.session.flushStorageData(); // si necesitas limpiar algo
   await loginWindow.loadURL(REGISTER_WINDOW_WEBPACK_ENTRY);
+  return true;
+});
+
+ipcMain.handle('nav:toUser', async () => {
+  if (!loginWindow) return;
+  await loginWindow.loadURL(USER_WINDOW_WEBPACK_ENTRY);
+  return true;
+});
+
+ipcMain.handle('nav:toEditUser', async (event, userId) => {
+  if (!loginWindow) return;
+  // Pasar el ID como query parameter en la URL
+  await loginWindow.loadURL(`${EDITUSER_WINDOW_WEBPACK_ENTRY}?userId=${userId}`);
   return true;
 });
 
 ipcMain.handle('http:get', async (_e, url: string, options?: any) => {
   const res = await net.fetch(url, { method: 'GET', ...options });
-  const body = await res.json(); // o .text() / .arrayBuffer()
-  // Convierte cabeceras a objeto simple si quieres retornarlas
+  const body = await res.json();
+  return { status: res.status, ok: res.ok, body };
+});
+
+ipcMain.handle('http:put', async (_e, url: string, options?: any) => {
+  const res = await net.fetch(url, { method: 'PUT', ...options });
+  const body = await res.json();
   return { status: res.status, ok: res.ok, body };
 });
 
@@ -80,6 +99,13 @@ ipcMain.handle('http:post', async (_e, url: string, payload: any, options?: any)
     ...options
   });
   return { status: res.status, ok: res.ok, body: await res.json()};
+});
+
+// Handle requests from the renderer process
+ipcMain.handle('get-backend-data', async (event, arg) => {
+  // Perform backend operations here (e.g., database queries, file operations)
+  const data = { message: 'Data from backend!', arg: arg };
+  return data; // Send data back to the renderer
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common

@@ -1,17 +1,49 @@
 body {
   font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif;
+    'Roboto';
 }
 
 nav {
   background-color: #008d95;
+  position: relative;
+  z-index: 1100;
+  display: flex;            /* asegura flujo horizontal fiable */
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
 }
+
 .navbar-brand {
   color: white;
-  content: url(../../../recursos/placeholder1.png);
+  /* eliminar content: url(); usamos la <img> en el HTML */
   width: 60px;
   height: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  position: relative;
+  z-index: 1101;
+}
+
+/* eliminar margen gigantesco que podía cubrir el icono */
+.navbar-text {
+  color: white;
+  margin: 0;
+  margin-left: 8px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+/* asegurar que el icono y su wrapper reciban clicks */
+#userIconWrapper,
+#userIcon {
+  position: relative;
+  z-index: 1102;
+  pointer-events: auto;
+  cursor: pointer;
+  display: inline-block;
 }
 
 #sidebar-wrapper {
@@ -36,7 +68,10 @@ nav {
 }
 .navbar-text {
   color: white;
-  text-align: left;
+  margin-right: 1155px;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font: bold;
 }
 a {
   color: white;
@@ -47,4 +82,17 @@ a {
   position: fixed; /* Cambiar a fixed para posicionarlo en relación a la ventana */
   bottom: 20px;    /* Ajusta la distancia desde la parte inferior */
   right: 20px;     /* Ajusta la distancia desde la derecha */
+}
+
+#btnTest {
+  position: fixed; /* Cambiar a fixed para posicionarlo en relación a la ventana */
+  bottom: 20px;    /* Ajusta la distancia desde la parte inferior */
+  right: 80px;     /* Ajusta la distancia desde la derecha */
+}
+
+#userIcon {
+  position: relative;
+  z-index: 1102;
+  pointer-events: auto;
+  cursor: pointer;
 }

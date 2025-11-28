@@ -23,9 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       email: emailInput.value,
       password: passwordInput.value
     });
-  
-    console.log(res);
-      
+    
       /*Credenciales para la prueba
       Email: ofeck@gmail.com
       Password: ofeck1234
@@ -45,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const res1 = await window.http.get('http://localhost:3001/get-users')
     console.log(res1)
   })
-
   if (registroLink) {
     registroLink.addEventListener('click', async (e) => {
       e.preventDefault();                  // evita la navegación por defecto

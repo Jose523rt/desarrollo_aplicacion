@@ -9,12 +9,24 @@ function showAlert(message: string, type: 'success' | 'danger' = 'success') {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  console.log('Login page loaded'); 
+  console.log('Login page loaded');
 
+  const token = localStorage.getItem('authToken')
+  const image = document.getElementById('userIcon');
   const backLoginBtn = document.getElementById('btnBackLogin');
+  const testBtn = document.getElementById('btnTest');
 
   backLoginBtn?.addEventListener('click', async () => {
     console.log('Login clickeado');
     await window.appNav.toLogin();
+  });
+
+  testBtn?.addEventListener('click', async () => {
+    console.log('El token es /n', token);
+  });
+
+  image?.addEventListener('click', async () => {
+    console.log('Icono clickeado');
+    await window.appNav.toUser();
   });
 });

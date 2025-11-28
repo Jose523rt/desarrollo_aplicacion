@@ -4,12 +4,15 @@
 import { contextBridge, ipcRenderer } from "electron";
 
 contextBridge.exposeInMainWorld('appNav', {
-    toHome: () => ipcRenderer.invoke('nav:toHome'),
-    toLogin: () => ipcRenderer.invoke('nav:toLogin'),
-    toRegister: () => ipcRenderer.invoke('nav:toRegister')
+  toHome: () => ipcRenderer.invoke('nav:toHome'),
+  toLogin: () => ipcRenderer.invoke('nav:toLogin'),
+  toRegister: () => ipcRenderer.invoke('nav:toRegister'),
+  toUser: () => ipcRenderer.invoke('nav:toUser'),
+  toEditUser: (userId:string) => ipcRenderer.invoke('nav:toEditUser', userId),
 });
 
 contextBridge.exposeInMainWorld('http', {
   get: (url: string, options?: any) => ipcRenderer.invoke('http:get', url, options),
   post: (url: string, body: any, options?: any) => ipcRenderer.invoke('http:post', url, body, options),
+  put: (url: string, body: any, options?: any) => ipcRenderer.invoke('http:put', url, body, options),
 });
