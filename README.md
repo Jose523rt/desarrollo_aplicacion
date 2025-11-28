@@ -19,7 +19,7 @@ Se agregaron nuevas funcionalidades al proyecto:
 * Se agregaron funcionalidades a la página de Login y Registro
 * Se añadio la conexión a la base de datos
 * Se agrego encriptación de contraseñas
-### 28 de Noviembre de 2025
+### 27 de Noviembre de 2025
 * Se agrego la carpeta editUser
   * Se agrego el archivo editUser.css
   * Se agrego el archivo editUser.html
@@ -32,3 +32,7 @@ Se agregaron nuevas funcionalidades al proyecto:
   * En la página de user se muestran los usuarios activos, en dónde se pueden eliminar o editar
   * En la página de editUser se puede cambiar el nombre y correo del usuario
 * Se agregó estilización en la página de User y EditUser
+### 28 de Noviembre de 2025
+* Se agregaron cambios temporales a la página Home, cambios
+  * Se agregaron cambios en home.html
+  * Se agregaron cambios en home.css
