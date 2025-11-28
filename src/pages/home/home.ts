@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Login page loaded');
 
   const token = localStorage.getItem('authToken')
-  const image = document.getElementById('userIcon');
+  const image = document.getElementById('button-image');
   const backLoginBtn = document.getElementById('btnBackLogin');
   const testBtn = document.getElementById('btnTest');
 

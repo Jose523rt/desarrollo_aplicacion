@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
           const res = await window.http.get('http://localhost:3001/get-users');
 
-          // Normalizar respuesta
           let allUsers: User[] = [];
           if (res && typeof res === 'object' && ('ok' in res || 'status' in res)) {
               if (res.ok === false) throw new Error(`HTTP error ${res.status}`);
@@ -98,8 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ObtenerUsers();
 });
-
-
 
 function escapeHtml(s: string) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));

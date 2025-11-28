@@ -28,9 +28,10 @@ nav {
 
 /* eliminar margen gigantesco que podía cubrir el icono */
 .navbar-text {
-  color: white;
+  color: rgb(255, 255, 255);
   margin: 0;
-  margin-left: 8px;
+  margin-left: 80px;
+  margin-bottom: 0px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -58,21 +59,16 @@ nav {
   transition: all 0.4s ease 0s;
 }
 
-.sidebar-nav {
+.nav {
   position: absolute;
   top: 0;
   width: 250px;
   list-style: none;
   margin: 0;
   padding: 0;
+  background-color: #008d95;
 }
-.navbar-text {
-  color: white;
-  margin-right: 1155px;
-  font-size: 20px;
-  font-family: 'Roboto';
-  font: bold;
-}
+
 a {
   color: white;
   text-decoration: none;
@@ -90,9 +86,18 @@ a {
   right: 80px;     /* Ajusta la distancia desde la derecha */
 }
 
-#userIcon {
-  position: relative;
-  z-index: 1102;
-  pointer-events: auto;
-  cursor: pointer;
+ 
+.image-button {
+  background-image: url('../../../recursos/user_icon.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+  border: none;
+  background-color: transparent;
+}
+
+a, img {
+  display: block;
 }

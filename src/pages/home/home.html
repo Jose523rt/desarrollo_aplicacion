@@ -8,23 +8,27 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-brand" id="userIconWrapper">
-           <img src="../../../recursos/user_icon.png" alt="User Icon" id="userIcon" style="cursor: pointer;">
+        <div class="navbar-brand" id="userIconWrapper"> 
+           <button class="image-button" type="button" id="button-image"> <h3 class="navbar-text h1" id="userWelcome">Hola, Ofeck</h3></button>   
         </div>
-        <span class="navbar-text mb-0 h1">Hola, Ofeck</span>
     </nav>
 
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <div>
-                <button type="button" class="btn btn-primary btn-lg"></button>
-            </div>
-            <li class="sidebar-brand"></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Shortcuts</a></li>
-        </ul>
-    </div>
-    <div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Users</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Shortcuts</a>
+        </li>
+        <li class="sidebar-brand"></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Shortcuts</a></li>
+    </ul>
+
+    <div>   
         <button id="btnBackLogin" type="button" class="btn btn-primary m-0">Back</button>
     </div>
 </body>
