@@ -11,22 +11,26 @@
         <div class="navbar-brand" id="userIconWrapper"> 
            <button class="image-button" type="button" id="button-image"> <h3 class="navbar-text h1" id="userWelcome">Hola, Ofeck</h3></button>   
         </div>
-    </nav>
+        <input id="SearchBar" type="text" class="Search" placeholder="Busca un producto...">
+    </nav>    
 
     <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Users</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Shortcuts</a>
-        </li>
         <li class="sidebar-brand"></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Shortcuts</a></li>
+        <button class="AddItem" type="button" id="NewItemButton"> + Nuevo </button>
+        <button class="navbutton" type="button" id="InventarioBtn">Inventario</button>
+        <button class="navbutton" type="button" id="HistorialBtn">Historial</button>
     </ul>
+
+    <main id="ContBlanco" class="CosasEnBlanco">
+        <h1>Mi Refrigerador</h1>
+        <hr>
+        <button class="AppleImage" type="button" id="AppleImage"></button>
+        <button class="CheeseImage" type="button" id="CheeseImage"></button>
+        <button class="EggsImage" type="button" id="EggsImage"></button>
+        <button class="MushroomImage" type="button" id="MushroomImage"></button>
+        <button class="PorkImage" type="button" id="PorkImage"></button>
+        <button class="StBerryImage" type="button" id="StBerryImage"></button>
+    </main>
 
     <div>   
         <button id="btnBackLogin" type="button" class="btn btn-primary m-0">Back</button>

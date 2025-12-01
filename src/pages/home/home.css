@@ -7,17 +7,17 @@ nav {
   background-color: #008d95;
   position: relative;
   z-index: 1100;
-  display: flex;            /* asegura flujo horizontal fiable */
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.75rem; 
+  min-height: 48px;        
 }
 
 .navbar-brand {
   color: white;
-  /* eliminar content: url(); usamos la <img> en el HTML */
-  width: 60px;
-  height: 70px;
+  width: 48px;   
+  height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -30,9 +30,8 @@ nav {
 .navbar-text {
   color: rgb(255, 255, 255);
   margin: 0;
-  margin-left: 80px;
-  margin-bottom: 0px;
-  font-size: 20px;
+  margin-left: 50px;   
+  font-size: 20px;    
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
@@ -59,14 +58,21 @@ nav {
   transition: all 0.4s ease 0s;
 }
 
+html, body {
+  height: 100%;
+}
+
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
-  width: 250px;
+  left: 0;
+  width: 200px;
+  height: 100vh;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 48px 0 0 0; 
   background-color: #008d95;
+  overflow-y: auto;
 }
 
 a {
@@ -89,15 +95,170 @@ a {
  
 .image-button {
   background-image: url('../../../recursos/user_icon.png');
-  background-size: cover;
+  background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
-  width: 60px;
-  height: 60px;
+  width: 40px;    
+  height: 40px;
   border: none;
   background-color: transparent;
 }
 
 a, img {
   display: block;
+}
+
+#NewItemButton {
+  background-color: #15aaac;
+  color: white;
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid black;
+  border-radius: 21px;
+  width: 150px;   
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  position: absolute;
+  left: 15px;
+  top: 70px;
+  z-index: 1101;
+}
+
+#NewItemButton:hover {
+  background-color: #17dfe1;
+  cursor: pointer;
+}
+
+.navbutton {
+  background-color: #008d95;
+  color: white;
+  border: 1px solid black;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  width: 185px;   
+  height: 30px;
+  align-items: center;
+  text-align: left;
+  margin-left: 6px;
+}
+
+.navbutton:hover {
+  background-color: #17dfe1;
+  cursor: pointer;
+}
+
+#InventarioBtn {
+  position: absolute;
+  top: 135px;
+  left: 0px;
+}
+
+#HistorialBtn {
+  position: absolute;
+  top: 165px;
+}
+
+#SearchBar {
+  background-color: #c0f8d1;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 400px;
+  height: 30px;
+  position: relative;
+  left: -10px;
+  padding-left: 12px;
+}
+
+.CosasEnBlanco {
+  margin-left: 200px; 
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+#AppleImage {
+  background-image: url('../../../recursos/Apple.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 250px;    
+  height: 250px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  left: 50px;
+  margin: 20px;
+}
+
+#CheeseImage {
+  background-image: url('../../../recursos/Cheese.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 250px;    
+  height: 250px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  left: 100px;
+}
+
+#EggsImage {
+  background-image: url('../../../recursos/Eggs.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 250px;    
+  height: 250px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  left: 180px;
+}
+
+#MushroomImage {
+  background-image: url('../../../recursos/Mushrooms.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 250px;    
+  height: 250px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  left: 70px;
+}
+
+#PorkImage {
+  background-image: url('../../../recursos/Pork.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 250px;    
+  height: 250px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  left: 140px;
+}
+
+#StBerryImage {
+  background-image: url('../../../recursos/StBerry.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 250px;    
+  height: 250px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  left: 225px;
 }
