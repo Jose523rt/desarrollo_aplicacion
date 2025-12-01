@@ -36,3 +36,8 @@ Se agregaron nuevas funcionalidades al proyecto:
 * Se agregaron cambios temporales a la página Home, cambios
   * Se agregaron cambios en home.html
   * Se agregaron cambios en home.css
+ 
+ ### 1 de Diciembre de 2025
+ * Se creó la UI estática de la página Home.
+  * Se agregaron cambios en home.html
+  * Se agregaron cambios en home.css
